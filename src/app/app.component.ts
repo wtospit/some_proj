@@ -30,4 +30,18 @@ export class AppComponent {
   priorityTypeResult: String = "";
 
   isShow: boolean = false;
+
+
+  click() {
+
+    if (!this.selectedTrackerType || !this.selectedPriorityType || !this.detailInput) {
+      this.isShow = false;
+      return;
+    }
+
+    this.trackerTypeResult = this.selectedPriorityType;
+    this.detailResult = this.detailInput;
+    this.priorityTypeResult = this.selectedPriorityType;
+    this.isShow = true;
+  }
 }
