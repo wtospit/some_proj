@@ -7,4 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  trackerType = [
+    {value: 'bugSupport', viewValue: 'Bug - Support'},
+    {value: 'defectTest', viewValue: 'Defect - Test'},
+    {value: 'defectTestSpec', viewValue: 'Defect - Test Spec'}
+  ];
+
+  priorityType = [
+    {value: 'urgent', viewValue: 'Urgent'},
+    {value: 'normal', viewValue: 'Normal'},
+    {value: 'low', viewValue: 'Low'}
+  ];
+
+
 }
