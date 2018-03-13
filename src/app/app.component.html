@@ -4,174 +4,77 @@
     Prediction Defect
   </h1>
 </div>
-<div class="row" >  
-<div class="col-sm-8 offset-sm-2">
-<div class="card-deck">
-    <div class="card">
-        <div class="card-body">          
-            <div>
-                <mat-form-field>
-                    <mat-select placeholder="Tracker">
-                      <mat-option *ngFor="let type of trackerType" [value]="type.value">
-                        {{ type.viewValue }}
-                      </mat-option>
-                    </mat-select>
-                  </mat-form-field>
-            </div>
-            <div>
-                <mat-form-field class="full-width">
-                    <textarea matInput placeholder="Defect detail" rows="5"></textarea>
-                  </mat-form-field>
-            </div>
-            <div>
-                <mat-form-field>
-                    <mat-select placeholder="Priority">
-                      <mat-option *ngFor="let type of priorityType" [value]="type.value">
-                        {{ type.viewValue }}
-                      </mat-option>
-                    </mat-select>
-                  </mat-form-field>
-            </div>
-          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-        </div>
-      </div>
+
+<div class="row">
+  <br>
+</div>
+
+<div class="row">
+  <div class="col-sm-8 offset-sm-2">
+
+    <div class="card-deck">
+
+        <div class="col-sm-6">
       <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Result</h5>
-            <p class="card-text">
-                Tracker :Bug - Support
-            </p>
-            <p class="card-text">
-                Defect detail :ข้อมูลที่อยู่ของ member ไม่ถูกส่งไปพร้อมกับการcreate order
-            </p>
-            <p class="card-text">
-                Priority :Urgent
-            </p>
-            <h3 class="card-text text-success text-center">
-                Success card title
-            </h3>
-            <p class="card-text text-center">
-                คากการณ์ว่าDefect นี้สามารถตรวจสอบ/แก้ไขได้ทันเวลา
-            </p>
-    
-            
-    
-            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        <div class="card-body">
+          <div>
+            <mat-form-field>
+              <mat-select placeholder="Tracker" required [(value)]="selectedTrackerType">
+                <mat-option *ngFor="let type of trackerType" [value]="type.value">
+                  {{ type.viewValue }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
           </div>
-       
+          <div>
+            <mat-form-field class="full-width">
+              <textarea matInput placeholder="Defect detail" rows="5" required [(ngModel)]="detailInput"></textarea>
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field>
+              <mat-select placeholder="Priority" required [(value)]="selectedPriorityType">
+                <mat-option *ngFor="let type of priorityType" [value]="type.value">
+                  {{ type.viewValue }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="text-center ">
+            <a href="#" class="btn btn-success" (click)="isShow = true">Predict</a>
+          </div>
         </div>
-  </div>
-</div>
-</div>
-<div class="row" >  
-  <div class="col-sm-4 offset-sm-2">
-    <div class="card">
-      <div class="card-body">          
-          <div>
-              <mat-form-field>
-                  <mat-select placeholder="Tracker">
-                    <mat-option *ngFor="let type of trackerType" [value]="type.value">
-                      {{ type.viewValue }}
-                    </mat-option>
-                  </mat-select>
-                </mat-form-field>
-          </div>
-          <div>
-              <mat-form-field class="full-width">
-                  <textarea matInput placeholder="Defect detail" rows="5"></textarea>
-                </mat-form-field>
-          </div>
-          <div>
-              <mat-form-field>
-                  <mat-select placeholder="Priority">
-                    <mat-option *ngFor="let type of priorityType" [value]="type.value">
-                      {{ type.viewValue }}
-                    </mat-option>
-                  </mat-select>
-                </mat-form-field>
-          </div>
-        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
       </div>
-    </div>
-  </div>
-  <div class="col-sm-4">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Result</h5>
-        <p class="card-text">
-            Tracker :Bug - Support
-        </p>
-        <p class="card-text">
-            Defect detail :ข้อมูลที่อยู่ของ member ไม่ถูกส่งไปพร้อมกับการcreate order
-        </p>
-        <p class="card-text">
-            Priority :Urgent
-        </p>
-        <h3 class="card-text text-success text-center">
-            Success card title
-        </h3>
-        <p class="card-text text-center">
-            คากการณ์ว่าDefect นี้สามารถตรวจสอบ/แก้ไขได้ทันเวลา
-        </p>
-
-        
-
-        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-      </div>
-   
-    </div>
-  </div>
-</div>
+        </div>
 
 
-<div>
-  <mat-grid-list cols="2" rowHeight="200px">
-    <mat-grid-tile [colspan]="1" [rowspan]="1">
-      <mat-form-field>
-        <mat-select placeholder="Tracker">
-          <mat-option *ngFor="let type of trackerType" [value]="type.value">
-            {{ type.viewValue }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="3">
-      <mat-card class="example-card">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>Shiba Inu</mat-card-title>
-          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-        <mat-card-content>
-          <p>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-            bred for hunting.
+      <div class="card border border-success" *ngIf="isShow">
+        <div class="card-body">
+          <h5 class="card-title">Result</h5>
+          <p class="card-text">
+            Tracker : {{trackerTypeResult}}
           </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
-        </mat-card-actions>
-      </mat-card>
-  
-    </mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="1">
-      <mat-form-field class="full-width">
-        <textarea matInput placeholder="Defect detail"></textarea>
-      </mat-form-field>
-    </mat-grid-tile>
-    <mat-grid-tile [colspan]="1" [rowspan]="1">
-      <mat-form-field>
-        <mat-select placeholder="Priority">
-          <mat-option *ngFor="let type of priorityType" [value]="type.value">
-            {{ type.viewValue }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </mat-grid-tile>
-  </mat-grid-list>
-  
-  
+          <p class="card-text">
+            Defect detail : {{detailResult}}
+          </p>
+          <p class="card-text">
+            Priority : {{priorityTypeResult}}
+          </p>
+          <h3 class="card-text text-success text-center">
+              In time
+          </h3>
+          <br>
+          <p class="card-text text-center">
+            คากการณ์ว่าDefect นี้สามารถตรวจสอบ/แก้ไขได้ทันเวลา
+          </p>
+
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
 </div>
+
+

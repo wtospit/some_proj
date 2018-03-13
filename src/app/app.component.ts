@@ -9,16 +9,25 @@ export class AppComponent {
   title = 'app';
 
   trackerType = [
-    {value: 'bugSupport', viewValue: 'Bug - Support'},
-    {value: 'defectTest', viewValue: 'Defect - Test'},
-    {value: 'defectTestSpec', viewValue: 'Defect - Test Spec'}
+    {value: 'Bug - Support', viewValue: 'Bug - Support'},
+    {value: 'Defect - Test', viewValue: 'Defect - Test'},
+    {value: 'Defect - Test Spec', viewValue: 'Defect - Test Spec'}
   ];
 
   priorityType = [
-    {value: 'urgent', viewValue: 'Urgent'},
-    {value: 'normal', viewValue: 'Normal'},
-    {value: 'low', viewValue: 'Low'}
+    {value: 'Urgent', viewValue: 'Urgent'},
+    {value: 'Normal', viewValue: 'Normal'},
+    {value: 'Low', viewValue: 'Low'}
   ];
 
+  selectedTrackerType: String = "";
+  trackerTypeResult: String = "";
 
+  detailInput: String = "";
+  detailResult: String = "";
+
+  selectedPriorityType: String = "";
+  priorityTypeResult: String = "";
+
+  isShow: boolean = false;
 }
