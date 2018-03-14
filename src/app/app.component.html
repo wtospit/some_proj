@@ -48,7 +48,7 @@
         </div>
 
 
-      <div class="card border border-success" *ngIf="isShow">
+      <div class="card border" *ngIf="isShow" [class.border-success]="isSuccess" [class.border-danger]="!isSuccess">
         <div class="card-body">
           <h5 class="card-title">Result</h5>
           <p class="card-text">
@@ -60,7 +60,7 @@
           <p class="card-text">
             Priority : {{priorityTypeResult}}
           </p>
-          <h3 class="card-text text-success text-center">
+          <h3 class="card-text  text-center" [class.text-success]="isSuccess" [class.text-danger]="!isSuccess">
               In time
           </h3>
           <br>
