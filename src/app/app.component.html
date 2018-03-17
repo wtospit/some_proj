@@ -61,13 +61,15 @@
             Priority : {{priorityTypeResult}}
           </p>
           <h3 class="card-text  text-center" [class.text-success]="isSuccess" [class.text-danger]="!isSuccess">
-              In time
+              {{result}}
           </h3>
           <br>
           <p class="card-text text-center">
-            คากการณ์ว่าDefect นี้สามารถตรวจสอบ/แก้ไขได้ทันเวลา
+            {{resultMsg}}
           </p>
-
+          <p class="card-text" *ngIf="!isSuccess">
+            วิธีแก้ปัญหา : {{resultSolution}}
+          </p>
 
 
         </div>
