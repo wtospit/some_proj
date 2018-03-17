@@ -32,7 +32,7 @@ export class AppComponent {
   isShow: boolean = false;
   isSuccess: boolean = true;
 
-  inTimeMsg: string = "คากการณ์ว่าDefect นี้สามารถตรวจสอบ/แก้ไขได้ทันเวลา";
+  inTimeMsg: string = "คาดการณ์ว่าDefect นี้สามารถตรวจสอบ/แก้ไขได้ทันเวลา";
   lateMsg: string = "คาดการณ์ว่า Defect นี้ สามารถตรวจสอบ/แก้ไขล่าช้า"
 
   result: string = "";
