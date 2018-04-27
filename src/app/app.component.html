@@ -68,8 +68,8 @@
             {{resultMsg}}
           </p>
           <p class="card-text" *ngIf="!isSuccess">
-            วิธีแก้ปัญหา : {{resultSolution}}
-          </p>
+            วิธีแก้ปัญหา : 
+          </p><div [innerHTML]="resultSolution"></div>
 
 
         </div>
